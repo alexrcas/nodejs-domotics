@@ -20,6 +20,11 @@ Para los esclavos, se utilizará el módulo WiFi ESP8266, ampliamente conocido y
 
 Como se puede observar en el diagrama de secuencia, la comunicación entre los clientes y el servidor se realiza a través de websockets, mientras que los esclavos y el servidor se comunican mediante peticiones HTTP.
 
+#### Lenguajes, tecnologías y librerías o herramientas más importantes:
+- Front-end: Sass, React, jQuery, Gulp, Socket.io
+- Back-end: NodeJs, Express, Socket.io
+- Hardware: Arduino C++, ESP8266 Adafruit
+
 ## 2. Fases del proyecto
 Para organizar mejor el proyecto, he decidido dividirlo en dos bloques, cada uno a su vez con sus fases. Estas fases podrían variar durante el desarrollo o no necesariamente se realizarán en orden, aunque intentaré hacerlo.
 #### Bloque 1. Implementación del sistema.
@@ -30,3 +35,6 @@ Para organizar mejor el proyecto, he decidido dividirlo en dos bloques, cada uno
 #### Bloque 2. Recogida y tratamiento de datos. Seguridad.
 - [ ] Autenticación y administración de usuarios mediante FireBase.
 - [ ] Recogida de estadísticas y análisis de datos. Comportamientos inteligentes como presets, horarios, etc...
+
+### 3. Desarrollo del proyecto
+En esta sección se comentará el desarrollo de forma histórica. Esta documentación no pretende ser un tutorial de programación, por lo que únicamente haré referencia a los puntos más importantes, para recordarlos y aprender.
