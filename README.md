@@ -1,6 +1,6 @@
 # nodejs-domotics
 
-## 1. Introduction
+## 1. Introducción
 Este proyecto pretende lograr un sistema domótico para controlar y monitorizar los dispositivos eléctricos de una vivienda. Se trata de un pequeño proyecto personal que estoy llevando a cabo en mi tiempo libre con el fin de aprender y mejorar.
 
 ### 1.1. Descripción
