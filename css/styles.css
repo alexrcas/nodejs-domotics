@@ -1,0 +1,46 @@
+html, body {
+    height: 100%;
+}
+
+.grid {
+    height: 100%;
+    border: solid 3px;
+    flex-grow: 1;
+    display: grid;
+    grid-template-areas: 'header header'
+                         'main main'
+                         'foot foot';
+    grid-template-rows: 1fr 5fr 1fr;
+}
+
+.header {
+   grid-area: header;
+   background: blue; 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.main {
+    grid-area: main;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.foot {
+    grid-area: foot;
+    background: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.switch {
+    flex-grow: 1;
+    height: 100%;
+    font-size: 100px;
+    width: 100%;
+}
