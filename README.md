@@ -28,7 +28,7 @@ Como se puede observar en el diagrama de secuencia, la comunicación entre los c
 ## 2. Fases del proyecto
 Para organizar mejor el proyecto, he decidido dividirlo en dos bloques, cada uno a su vez con sus fases. Estas fases podrían variar durante el desarrollo o no necesariamente se realizarán en orden, aunque intentaré hacerlo.
 #### Bloque 1. Implementación del sistema.
-- [x] Establecer una comunicación bidireccional transparente, a través de un portal web, entre el cliente y el esclavo. La aplicación web no debe ser "ciega", es decir, un interruptor no debe cambiar de estado por el mero hecho de pulsarlo, sino que debe ser el servidor quien lo cambie con su respuesta, asegurando siempre reflejar el verdadero estado del sistema.
+- [x] Establecer una comunicación bidireccional transparente, a través de un portal web, entre el cliente y el esclavo. La aplicación web no debe ser "ciega", es decir, un interruptor no debe cambiar de estado a nivel de front-end, por el mero hecho de pulsarlo, sino que debe ser el servidor quien lo cambie con su respuesta, asegurando siempre reflejar el verdadero estado del sistema.
 - [x] Lograr comunicación centralizada y en tiempo real. Si hay varios clientes conectados, todos deben ver en tiempo real los cambios que realice alguno de ellos.
 - [ ] Preparar el sistema para escalar automáticamente. Por cada esclavo que se conecte, debería aparecer automáticamente un nuevo botón de control en el portal web. Es necesario implementar algún tipo de protocolo de "discover".
 
@@ -37,4 +37,4 @@ Para organizar mejor el proyecto, he decidido dividirlo en dos bloques, cada uno
 - [ ] Recogida de estadísticas y análisis de datos. Comportamientos inteligentes como presets, horarios, etc...
 
 ### 3. Desarrollo del proyecto
-En esta sección se comentará el desarrollo de forma histórica. Esta documentación no pretende ser un tutorial de programación, por lo que únicamente haré referencia a los puntos más importantes, para recordarlos y aprender.
+En esta sección se comentará el desarrollo de forma histórica. Esta documentación no pretende ser un tutorial de programación, por lo que únicamente haré referencia a los puntos más importantes o problemas que he solucionado, para recordarlos y aprender.
