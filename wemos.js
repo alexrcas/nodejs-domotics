@@ -63,6 +63,7 @@ class Wemos {
 
 
     status = () => {
+        console.log('preguntando...')
         return new Promise((res, rej) => {
 
             http.get(`http://${this.address}/Status`, (resp) => {
@@ -74,7 +75,6 @@ class Wemos {
                     res(data);
                 });
             });
-
         })
     }
 }

@@ -41,6 +41,6 @@ html, body {
 .switch {
     flex-grow: 1;
     height: 100%;
-    font-size: 100px;
+    font-size: 100%;
     width: 100%;
 }
