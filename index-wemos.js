@@ -12,6 +12,8 @@ const io = require('socket.io')(server);
 const wemos = require('./wemos.js');
 const wemosController = new wemos('192.168.0.105');
 
+
+
 server.listen(3000, () => {
     console.log('Server running on port 3000');
 });
@@ -28,11 +30,15 @@ app.get('/css/styles.css', (req, res) => {
     res.sendFile(path.join(__dirname, '/css/styles.css'));
 })
 
+/************************************WEB */
+
 io.sockets.on('connection', (socket) => {
     console.log('cliente conectado!');
 
-    //Cambiar esta función para usar wemosController
-    socket.emit('status', controller.status());
+    wemosController.status().then( (res) => {
+        socket.emit('status', res);
+        socket.broadcast.emit('status', res);
+    } )
 
     socket.on('toggle', () => {
         wemosController.toggle().then( (res) => {
@@ -41,3 +47,9 @@ io.sockets.on('connection', (socket) => {
         })
     });
 });
+
+/**********************USER INTERFACE***************/
+
+app.get('/handshake', (req, res) => {
+    console.log("Handshake recibido!", req.query.ip);
+})
