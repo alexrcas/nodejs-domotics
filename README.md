@@ -31,6 +31,7 @@ Para organizar mejor el proyecto, he decidido dividirlo en dos bloques, cada uno
 - [x] Establecer una comunicación bidireccional transparente, a través de un portal web, entre el cliente y el esclavo. La aplicación web no debe ser "ciega", es decir, un interruptor no debe cambiar de estado a nivel de front-end, por el mero hecho de pulsarlo, sino que debe ser el servidor quien lo cambie con su respuesta, asegurando siempre reflejar el verdadero estado del sistema.
 - [x] Lograr comunicación centralizada y en tiempo real. Si hay varios clientes conectados, todos deben ver en tiempo real los cambios que realice alguno de ellos.
 - [ ] Preparar el sistema para escalar automáticamente. Por cada esclavo que se conecte, debería aparecer automáticamente un nuevo botón de control en el portal web. Es necesario implementar algún tipo de protocolo de "discover".
+- [ ] Notificar al sistema cuando el estado del aparato conectado cambie manualmente. Es decir, si una persona pulsa un interruptor físico el sistema debe actualizarse.
 
 #### Bloque 2. Recogida y tratamiento de datos. Seguridad.
 - [ ] Autenticación y administración de usuarios mediante FireBase.
