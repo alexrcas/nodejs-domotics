@@ -19,7 +19,6 @@ class Manager {
     }
 
 }
-
 m = new Manager();
 m.addSlave('192.168.0.3');
 m.addSlave('192.168.0.105');
