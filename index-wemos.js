@@ -34,6 +34,7 @@ app.get('/css/styles.css', (req, res) => {
 app.get('/handshake', (req, res) => {
     console.log("Handshake recibido!", req.query.ip);
     controllersManager.addSlave(req.query.ip);
+    //Hay que notificar el estado al socket
     //La solución podría ser que controllersManager heredase de eventEmitter
     //Así podría actualizar el código dentro del socket
 });

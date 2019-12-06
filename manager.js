@@ -14,8 +14,11 @@ class Manager {
 
 
     addSlave = (address) => {
-        this.slaves.push(new wemos(address, this.id));
-        this.register(address);
+
+        if (!(this.slaves.find(item => item.address == address))) {
+            this.slaves.push(new wemos(address, this.id));
+            this.register(address);
+        }
     }
 
 
@@ -32,10 +35,8 @@ class Manager {
         let jsonFile = fs.readFile('./slaves.json', (err, rawData) => {
         let data = JSON.parse(rawData);
 
-        if (!(data.find(item => item.address == address))) {
-            data.push({'address': address, 'id': this.id});
-            this.id++;
-        }
+        data.push({'address': address, 'id': this.id});
+        this.id++;
         
         fs.writeFile('./slaves.json', JSON.stringify(data), (err) => {})
         });
