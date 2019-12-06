@@ -14,7 +14,6 @@ class Manager {
 
 
     addSlave = (address) => {
-
         if (!(this.slaves.find(item => item.address == address))) {
             this.slaves.push(new wemos(address, this.id));
             this.register(address);
