@@ -24,3 +24,8 @@ socket.on('status', (data) => {
 socket.on('toggleResponse', (data) => {
     console.log(data)
 });
+
+socket.emit('handshake');
+socket.on('getSlaves', data => {
+    console.log(data);
+})

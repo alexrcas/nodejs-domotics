@@ -4,11 +4,16 @@ class Wemos {
 
     constructor(address) {
         this.address = address;
+        this.id = 0;
     }
 
-    powerOn = () => {
-        return new Promise((res, rej) => {
 
+    id = id => this.id = id;
+
+
+    powerOn = () => {
+
+        return new Promise((res, rej) => {
             http.get(`http://${this.address}/Relay=ON`, (resp) => {
                 let data = '';
                 resp.on('data', chunk => {
@@ -21,6 +26,7 @@ class Wemos {
 
         })
     }
+
 
     powerOff = () => {
         return new Promise((res, rej) => {
@@ -37,6 +43,7 @@ class Wemos {
 
         })
     }
+    
     
     toggle = () => {
         return new Promise((res, rej) => {
