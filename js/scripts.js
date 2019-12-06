@@ -1,31 +1,39 @@
 console.log('ejecutando script');
 
+
+
 let socket = io();
 
-$('.switch').on('click', () => {
-    socket.emit('toggle');
-})
 
 socket.on('status', (data) => {
-    console.log('status', data)
-    if (data == 1) {
-        $('.switch').removeClass('btn-danger');
-        $('.switch').addClass('btn-success');
-        $('.switch').text('On');
+
+    let [id, status] = data.split(',')
+    if (status == 1) {
+        $('#' + id).removeClass('btn-danger');
+        $('#' + id).addClass('btn-success');
+        $('#' + id).text('On');
     }
     else {
-        $('.switch').removeClass('btn-success');
-        $('.switch').addClass('btn-danger');
-        $('.switch').text('Off');
-
+        $('#' + id).removeClass('btn-success');
+        $('#' + id).addClass('btn-danger');
+        $('#' + id).text('Off');
     }
 });
 
-socket.on('toggleResponse', (data) => {
-    console.log(data)
-});
 
 socket.emit('handshake');
 socket.on('getSlaves', data => {
-    console.log(data);
-})
+
+    data.forEach(element => {
+
+        let btn = document.createElement('button');
+        btn.classList.add('btn');
+        btn.classList.add('switch');
+        btn.id = element.id;
+        $('.main').append(btn);
+    });
+
+    $('.switch').click( (e) => {
+        socket.emit('toggle', e.target.id);
+    });
+});

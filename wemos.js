@@ -2,9 +2,9 @@ const http = require('http');
 
 class Wemos {
 
-    constructor(address) {
+    constructor(address, id) {
         this.address = address;
-        this.id = 0;
+        this.id = id
     }
 
 

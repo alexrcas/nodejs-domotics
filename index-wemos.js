@@ -34,6 +34,8 @@ app.get('/css/styles.css', (req, res) => {
 app.get('/handshake', (req, res) => {
     console.log("Handshake recibido!", req.query.ip);
     controllersManager.addSlave(req.query.ip);
+    //La solución podría ser que controllersManager heredase de eventEmitter
+    //Así podría actualizar el código dentro del socket
 });
 
 /* SOCKETS. USER INTERFACE INTERACTION */
@@ -42,15 +44,18 @@ io.sockets.on('connection', (socket) => {
     console.log('cliente conectado!');
     socket.emit('getSlaves', controllersManager.getSlaves());
 
-    controllersManager.slave(0).status().then( (res) => {
-        socket.emit('status', res);
-        socket.broadcast.emit('status', res);
-    } )
+   let slaves = controllersManager.getSlaves()
+   slaves.forEach(slave => {
+        controllersManager.slave(slave.id).status().then( (res) => {
+            socket.emit('status', slave.id + ',' + res);
+            socket.broadcast.emit('status', slave.id + ',' + res);
+        });
+   });
     
     socket.on('toggle', (id) => {
-        controllersManager.slave(0).toggle().then( (res) => {
-            socket.emit('status', res);
-            socket.broadcast.emit('status', res);
-        })
+        controllersManager.slave(id).toggle().then( (res) => {
+            socket.emit('status', id + ',' + res);
+            socket.broadcast.emit('status', id + ',' + res);
+        });
     });
 });

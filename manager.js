@@ -27,7 +27,6 @@ class Manager {
         return this.slaves;
     }
 
-
     register = (address) => {
         //De forma asíncrona
         let jsonFile = fs.readFile('./slaves.json', (err, rawData) => {
