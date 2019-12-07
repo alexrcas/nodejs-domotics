@@ -1,7 +1,7 @@
 # nodejs-domotics
 
 ## 1. Introducción
-Este proyecto pretende lograr un sistema domótico para controlar y monitorizar los dispositivos eléctricos de una vivienda. Se trata de un pequeño proyecto personal que estoy llevando a cabo en mi tiempo libre con el fin de aprender y mejorar.
+Este proyecto pretende lograr un sistema domótico para controlar y monitorizar los dispositivos eléctricos de una vivienda. Se trata de un pequeño proyecto personal que estoy llevando a cabo en mi tiempo libre con el fin mejorar y obtener nuevos conocimientos. En el futuro, si el proyecto sale bien, pretendo escribir esta documentación en inglés para hacerla lo más accesible posible. Es por ello que salvo el texto de este documento, todo lo demás como diagramas o el código fuente están hechos en inglés.
 
 ### 1.1. Descripción
 En pocas palabras, el objetivo del proyecto es monitorizar y controlar las luces o dispositivos eléctricos de una vivienda a través de cualquier terminal mediante WiFi. Muy probablemente, almacenarán datos de uso para realizar procesos de ETL que puedan derivar en análisis para el usuario o comportamientos inteligentes.
