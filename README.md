@@ -27,7 +27,7 @@ Como se puede observar en el diagrama de secuencia, la comunicación entre los c
 
 #### Arquitectura y lógica del sistema
 El diagrama de secuencia siguiente muestra el proceso de arranque del servidor y su interacción con los esclavos.
-<a href="https://ibb.co/9qJ9QvK"><img src="https://i.ibb.co/THZB9Tj/sequence.png" alt="sequence" border="0"></a><br /><a target='_blank' href='https://es.imgbb.com/'>upload picture</a><br />
+<a href="https://ibb.co/9qJ9QvK"><img src="https://i.ibb.co/THZB9Tj/sequence.png" alt="sequence" border="0"></a><br /><a target='_blank' href='https://es.imgbb.com/'></a><br />
 
 #### Diagrama de clases
 El proyecto está definido por el siguiente diagrama de clases. Para simplificar la lectura, no he escrito los atributos y métodos de cada clase, ya que lo único que pretendo hacer es representar de una pincelada la interacción entre ellas.
