@@ -12,7 +12,7 @@ Otra de las metas de este proyecto es simular un acabado comercial. El sistema d
 El siguiente esquema define la arquitectura básica del sistema, así como el material y las tecnologías utilizadas.
 <a href="https://ibb.co/9nG9dYK"><img src="https://i.ibb.co/zsNhtf9/Captura-de-pantalla-2019-12-04-21-31-22.png" alt="Captura-de-pantalla-2019-12-04-21-31-22" border="0"></a>
 
-El servidor central será una Raspberry Pi sobre la que correrá un NodeJS + Express. También contará con acceso a una base de datos FireBase alojada de forma externa.
+El servidor central será una Raspberry Pi sobre la que correrá un NodeJS + Express. Más adelante se prevee contar con acceso a una base de datos FireBase alojada de forma externa.
 
 Los clientes se conectaran al portal web, en principio, a través del navegador. Una fase futura puede ser la implementación de una versión App.
 
@@ -24,6 +24,20 @@ Como se puede observar en el diagrama de secuencia, la comunicación entre los c
 - Front-end: Sass, React, jQuery, Gulp, Socket.io
 - Back-end: NodeJs, Express, Socket.io
 - Hardware: Arduino C++, ESP8266 Adafruit
+
+#### Arquitectura y lógica del sistema
+El diagrama de secuencia siguiente muestra el proceso de arranque del servidor y su interacción con los esclavos.
+<a href="https://ibb.co/9qJ9QvK"><img src="https://i.ibb.co/THZB9Tj/sequence.png" alt="sequence" border="0"></a><br /><a target='_blank' href='https://es.imgbb.com/'>upload picture</a><br />
+
+#### Diagrama de clases
+El proyecto está definido por el siguiente diagrama de clases. Para simplificar la lectura, no he escrito los atributos y métodos de cada clase, ya que lo único que pretendo hacer es representar de una pincelada la interacción entre ellas.
+- La clase Server se encarga de todo lo que a las comunicaciones se refiere, tanto para servir el sitio web, como para comunicar a los clientes con los esclavos y viceversa.
+- La clase Manager ofrece un nivel de abstracción para poder trabajar más limpiamente con los distintos esclavos, ya que su número y estado podrá variar dinámicamente en el tiempo. La clase Manager ofrece una interfaz al servidor para que en todo momento tenga una lista de esclavos actualizada con la que poder trabajar. También gestiona los esclavos de forma que el usuario pueda guardar la configuración de los mismos y recuperarla cuando vuelvan a conectar. En definitiva, es la encargada de organizar y gestionar todo lo referente a los dispositivos de forma grupal.
+- La clase Wemos representa una microcontroladora física. Sus atributos y métodos se comunican a través de HTTP con el hardware real y en definitiva, ofrecen información y provocan acciones a nivel de electrónica.
+
+<a href="http://i.imgur.com/2e2DAJB.png">
+  <img src="http://imgur.com/2e2DAJBl.png" />
+</a>
 
 ## 2. Fases del proyecto
 Para organizar mejor el proyecto, he decidido dividirlo en dos bloques, cada uno a su vez con sus fases. Estas fases podrían variar durante el desarrollo o no necesariamente se realizarán en orden, aunque intentaré hacerlo.
