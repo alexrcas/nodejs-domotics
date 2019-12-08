@@ -10,7 +10,7 @@ Otra de las metas de este proyecto es simular un acabado comercial. El sistema d
 
 ### 1.2. Diseño, material y tecnologías
 El siguiente esquema define la arquitectura básica del sistema, así como el material y las tecnologías utilizadas.
-[](https://i.ibb.co/zsNhtf9/Captura-de-pantalla-2019-12-04-21-31-22.png")
+![](https://i.ibb.co/zsNhtf9/Captura-de-pantalla-2019-12-04-21-31-22.png)
 
 El servidor central será una Raspberry Pi sobre la que correrá un NodeJS + Express. Más adelante se prevee contar con acceso a una base de datos FireBase alojada de forma externa.
 
@@ -27,7 +27,7 @@ Como se puede observar en el diagrama de secuencia, la comunicación entre los c
 
 #### Arquitectura y lógica del sistema
 El diagrama de secuencia siguiente muestra el proceso de arranque del servidor y su interacción con los esclavos.
-[](https://ibb.co/9qJ9QvK"><img src="https://i.ibb.co/THZB9Tj/sequence.png)
+![](https://i.ibb.co/THZB9Tj/sequence.png)
 
 #### Diagrama de clases
 El proyecto está definido por el siguiente diagrama de clases. Para simplificar la lectura, no he escrito los atributos y métodos de cada clase, ya que lo único que pretendo hacer es representar de una pincelada la interacción entre ellas.
