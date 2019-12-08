@@ -10,7 +10,8 @@ Otra de las metas de este proyecto es simular un acabado comercial. El sistema d
 
 ### 1.2. Diseño, material y tecnologías
 El siguiente esquema define la arquitectura básica del sistema, así como el material y las tecnologías utilizadas.
-![](https://i.ibb.co/zsNhtf9/Captura-de-pantalla-2019-12-04-21-31-22.png)
+![](http://imgur.com/qO5Fdtbl.png)
+
 
 El servidor central será una Raspberry Pi sobre la que correrá un NodeJS + Express. Más adelante se prevee contar con acceso a una base de datos FireBase alojada de forma externa.
 
@@ -18,7 +19,9 @@ Los clientes se conectaran al portal web, en principio, a través del navegador.
 
 Para los esclavos, se utilizará el módulo WiFi ESP8266, ampliamente conocido y utilizado en tareas de este ámbito. Su bajo coste permite que sea asumible contar con un gran número de ellos. Para realizar la conexión a la corriente alterna, se necesitan algunos componentes electrónicos más que ahora mismo no tienen mayor importancia.
 
-Como se puede observar en el diagrama de secuencia, la comunicación entre los clientes y el servidor se realiza a través de websockets, mientras que los esclavos y el servidor se comunican mediante peticiones HTTP.
+Como se puede observar en el siguiente diagrama de secuencia, la comunicación entre los clientes y el servidor se realiza a través de websockets, mientras que los esclavos y el servidor se comunican mediante peticiones HTTP.
+
+![](http://imgur.com/4tjQiDml.png)
 
 #### Lenguajes, tecnologías y librerías o herramientas más importantes:
 - Front-end: Sass, React, jQuery, Gulp, Socket.io
