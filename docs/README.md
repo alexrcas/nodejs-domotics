@@ -52,5 +52,5 @@ Para organizar mejor el proyecto, he decidido dividirlo en dos bloques, cada uno
 - [ ] Recogida de estadísticas y análisis de datos. Comportamientos inteligentes como presets, horarios, etc...
 - [ ] Seguridad. Analizar e intentar hackear el sistema a todos los niveles, realizando correcciones en los agujeros encontrados.
 
-### 3. Desarrollo del proyecto
+## 3. Desarrollo del proyecto
 En esta sección se comentará el desarrollo de forma histórica. Esta documentación no pretende ser un tutorial de programación, por lo que únicamente haré referencia a los puntos más importantes o problemas que he solucionado, para recordarlos y aprender.
