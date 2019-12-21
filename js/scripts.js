@@ -21,7 +21,7 @@ socket.on('status', (data) => {
 });
 
 
-socket.emit('handshake');
+//socket.emit('handshake');
 socket.on('getSlaves', data => {
 
     data.forEach(element => {
@@ -29,7 +29,7 @@ socket.on('getSlaves', data => {
         let btn = document.createElement('button');
         btn.classList.add('btn');
         btn.classList.add('switch');
-        btn.id = element.id;
+        btn.id = element.MAC;
         $('.main').append(btn);
     });
 

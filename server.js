@@ -6,7 +6,7 @@ const path = require('path');
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-const manager = require('./manager.js');
+const manager = require('./includes/manager.js');
 const controllersManager = new manager();
 
 
@@ -17,7 +17,7 @@ server.listen(3000, () => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/index.html'));
+    res.sendFile(path.join(__dirname, '/html/index.html'));
 });
 
 app.get('/js/scripts.js', (req, res) => {
@@ -33,10 +33,8 @@ app.get('/css/styles.css', (req, res) => {
 
 app.get('/handshake', (req, res) => {
     console.log("Handshake recibido!", req.query.ip);
-    controllersManager.addSlave(req.query.ip);
-    //Hay que notificar el estado al socket
-    //La solución podría ser que controllersManager heredase de eventEmitter
-    //Así podría actualizar el código dentro del socket
+    let formatedMAC = req.query.MAC.replace(/:\s*/g, '');
+    controllersManager.addSlave(req.query.ip, formatedMAC);
 });
 
 /* SOCKETS. USER INTERFACE INTERACTION */
@@ -47,16 +45,17 @@ io.sockets.on('connection', (socket) => {
 
    let slaves = controllersManager.getSlaves()
    slaves.forEach(slave => {
-        controllersManager.slave(slave.id).status().then( (res) => {
-            socket.emit('status', slave.id + ',' + res);
-            socket.broadcast.emit('status', slave.id + ',' + res);
+        controllersManager.slave(slave.MAC).status().then( (res) => {
+            console.log('status', res)
+            socket.emit('status', slave.MAC + ',' + res);
         });
    });
     
-    socket.on('toggle', (id) => {
-        controllersManager.slave(id).toggle().then( (res) => {
-            socket.emit('status', id + ',' + res);
-            socket.broadcast.emit('status', id + ',' + res);
+    socket.on('toggle', (MAC) => {
+        controllersManager.slave(MAC).toggle().then( (res) => {
+            socket.emit('status', MAC + ',' + res);
+            socket.broadcast.emit('status', MAC + ',' + res);
         });
     });
+
 });

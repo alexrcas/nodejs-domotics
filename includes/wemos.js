@@ -2,13 +2,13 @@ const http = require('http');
 
 class Wemos {
 
-    constructor(address, id) {
+    constructor(address, MAC) {
         this.address = address;
-        this.id = id
+        this.MAC = MAC
     }
 
 
-    id = id => this.id = id;
+    MAC = MAC => this.MAC = MAC;
 
 
     powerOn = () => {
@@ -63,7 +63,6 @@ class Wemos {
 
 
     status = () => {
-        console.log('preguntando...')
         return new Promise((res, rej) => {
 
             http.get(`http://${this.address}/Status`, (resp) => {

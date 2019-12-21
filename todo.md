@@ -3,4 +3,4 @@
 
 - Corregido el punto anterior, al entrar en la web, el sistema nunca mostrará tarjetas que no estén conectadas. Otra cosa diferente es que la tarjeta sea desconectada sin que la página haya sido actualizada, en cuyo caso también habrá que refrescar dinámicamente.
 
-- Cuando se agrega en tiempo real una nueva microcontroladora, en la web no se refleja su estado real. Esto es porque al registrar una nuevo micro, hay que llamar a status, pero el socket no está en el mismo ámbito. Una posible solución es que la clase que contiene el método status herede de EventEmitter para poder notificar al socket.
+- Cuando se agrega en tiempo real una nueva microcontroladora, en la web no se refleja su estado real. Esto es porque al registrar una nuevo micro, hay que llamar a status, pero el socket no está en el mismo ámbito. Una posible solución es que la clase que contiene el método status herede de EventEmitter para poder notificar al socket. **Corregido a nivel de hardware**
